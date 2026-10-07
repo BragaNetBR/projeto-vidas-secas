@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-areia: #e9dcc2;
+  --color-areia-escura: #d9c6a0;
+  --color-bege: #f4ecdd;
+  --color-bege-clara: #faf6ec;
+  --color-terra: #9a5a35;
+  --color-terra-escura: #7a4527;
+  --color-marrom: #4a3626;
+  --color-marrom-escuro: #2c2019;
+  --color-vermelho: #a3402b;
+  --color-vermelho-escuro: #7c2e1e;
+  --color-azul: #5c7480;
+  --color-azul-escuro: #3e525c;
+  --color-preto: #1c1712;
+
+  --font-serif-editorial: "Fraunces", "Georgia", serif;
+  --font-sans-editorial: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--color-bege-clara);
+  color: var(--color-preto);
+  font-family: var(--font-sans-editorial);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif-editorial);
+}
+
+::selection {
+  background-color: var(--color-vermelho);
+  color: var(--color-bege-clara);
+}
+
+/* Foco visível consistente para navegação por teclado */
+:focus-visible {
+  outline: 3px solid var(--color-vermelho);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Scrollbar discreta, no espírito editorial */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bege);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-areia-escura);
+  border-radius: 8px;
+  border: 3px solid var(--color-bege);
+}
+
+.linha-rachada {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-marrom) 0px,
+    var(--color-marrom) 6px,
+    transparent 6px,
+    transparent 14px
+  );
+  height: 2px;
+  opacity: 0.35;
+}
+
+.texto-equilibrado {
+  text-wrap: balance;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
